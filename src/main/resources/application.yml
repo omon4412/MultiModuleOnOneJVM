@@ -1,0 +1,10 @@
+application:
+  middleService:
+    url: ${MIDDLE_SERVICE_URL:http://localhost:8080}
+  services:
+    type: inMemory
+  backendService:
+    url: ${BACKEND_SERVICE_URL:http://localhost:8081}
+bot:
+  name: MiniBankTelegramBot
+  token: ${BOT_TOKEN}

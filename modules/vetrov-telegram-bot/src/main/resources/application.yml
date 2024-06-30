@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: MiniBankTelegramBot
+  main:
+    web-application-type: none
+
+bot:
+  name: MiniBankTelegramBot
+  token: ${BOT_TOKEN}
+
+application:
+  middleService:
+    url: ${MIDDLE_SERVICE_URL:http://localhost:8080}

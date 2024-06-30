@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: MiddleService
+
+application:
+  services:
+    type: inMemory
+  backendService:
+    url: ${BACKEND_SERVICE_URL:http://localhost:8081}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  metrics:
+    distribution:
+      sla:
+        - 100ms
+        - 150ms
+        - 250ms
+        - 500ms
+        - 1s
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
