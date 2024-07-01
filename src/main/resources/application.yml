@@ -1,2 +1,12 @@
 server:
-  port: 10000
+  port: 8080
+application:
+  services:
+    type: backend
+  backendService:
+    url: ${BACKEND_SERVICE_URL:http://localhost:8082}
+  middleService:
+    url: http://localhost:8080
+bot:
+  name: MiniBankTelegramBot
+  token: ${BOT_TOKEN}
