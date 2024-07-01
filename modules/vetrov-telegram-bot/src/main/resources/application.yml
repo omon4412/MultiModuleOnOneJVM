@@ -11,3 +11,10 @@ bot:
 application:
   middleService:
     url: ${MIDDLE_SERVICE_URL:http://localhost:8080}
+
+logging:
+  level:
+    org:
+      springframework:
+        context:
+          annotation :DEBUG

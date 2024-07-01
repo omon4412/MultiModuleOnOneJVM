@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: MiddleService
+application:
+  services:
+    type: inMemory
+  backendService:
+    url: ${BACKEND_SERVICE_URL:http://localhost:8082}
+  port: 8081
