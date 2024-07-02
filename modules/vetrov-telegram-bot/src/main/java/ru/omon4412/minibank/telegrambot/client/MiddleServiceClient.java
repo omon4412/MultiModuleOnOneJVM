@@ -5,11 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.omon4412.minibank.telegrambot.configuration.CustomFeignClientConfiguration;
 import ru.omon4412.minibank.telegrambot.dto.*;
 
 import java.util.Collection;
 
-@FeignClient(name = "middleService", url = "${application.middleService.url}")
+@FeignClient(name = "middleService", url = "${application.middleService.url}", configuration = CustomFeignClientConfiguration.class)
 public interface MiddleServiceClient {
 
     @PostMapping("/users")

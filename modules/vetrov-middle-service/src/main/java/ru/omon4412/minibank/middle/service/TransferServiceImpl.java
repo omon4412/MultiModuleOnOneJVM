@@ -7,7 +7,7 @@ import ru.omon4412.minibank.middle.client.BackendServiceClient;
 import ru.omon4412.minibank.middle.dto.CreateTransferRequestDto;
 import ru.omon4412.minibank.middle.dto.TransferResponseDto;
 
-@Service
+@Service("backendTransferServiceImpl")
 @RequiredArgsConstructor
 @ConditionalOnProperty(value = "application.services.type", havingValue = "backend")
 public class TransferServiceImpl implements TransferService {

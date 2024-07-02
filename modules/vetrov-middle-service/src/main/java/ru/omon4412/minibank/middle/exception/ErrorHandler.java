@@ -14,7 +14,7 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = "ru.omon4412.minibank.middle")
 public class ErrorHandler {
 
     @ExceptionHandler(ConflictException.class)

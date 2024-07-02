@@ -13,7 +13,7 @@ import ru.omon4412.minibank.telegrambot.dto.TransferResponseDto;
 import ru.omon4412.minibank.telegrambot.model.ApiError;
 import ru.omon4412.minibank.telegrambot.util.Result;
 
-@Service
+@Service("telegramTransferServiceImpl")
 @RequiredArgsConstructor
 public class TransferServiceImpl implements TransferService {
     private final MiddleServiceClient middleServiceClient;
@@ -28,6 +28,8 @@ public class TransferServiceImpl implements TransferService {
             return handleFeignException(e);
         } catch (RetryableException | FeignException.InternalServerError e) {
             return new Result.Failure<>(new Exception("Сервис недоступен. Пожалуйста, попробуйте позже."));
+        }catch (Exception e){
+            return new Result.Failure<>(new Throwable("Ошибка"));
         }
     }
 

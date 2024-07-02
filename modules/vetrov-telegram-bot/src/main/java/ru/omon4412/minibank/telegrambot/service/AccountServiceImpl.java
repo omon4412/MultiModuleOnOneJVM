@@ -12,7 +12,7 @@ import ru.omon4412.minibank.telegrambot.util.Result;
 
 import java.util.Collection;
 
-@Service
+@Service("middleAccountServiceImpl")
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService {
     private final MiddleServiceClient middleServiceClient;
@@ -26,6 +26,8 @@ public class AccountServiceImpl implements AccountService {
             return handleFeignException(e);
         } catch (RetryableException | FeignException.InternalServerError e) {
             return new Result.Failure<>(new Exception("Сервис недоступен. Пожалуйста, попробуйте позже."));
+        } catch (Exception e) {
+            return new Result.Failure<>(new Throwable("Ошибка"));
         }
     }
 

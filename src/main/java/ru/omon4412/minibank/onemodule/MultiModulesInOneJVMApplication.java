@@ -1,7 +1,6 @@
 package ru.omon4412.minibank.onemodule;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import ru.omon4412.minibank.middle.MiddleServiceApplication;
 import ru.omon4412.minibank.telegrambot.TelegramBotApplication;
 

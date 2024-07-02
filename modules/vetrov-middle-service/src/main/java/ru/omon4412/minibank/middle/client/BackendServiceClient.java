@@ -5,11 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.omon4412.minibank.middle.configuration.CustomErrorDecoder;
 import ru.omon4412.minibank.middle.dto.*;
 
 import java.util.Collection;
 
-@FeignClient(name = "backendService", url = "${application.backendService.url}")
+@FeignClient(name = "backendService", url = "${application.backendService.url}", configuration = CustomErrorDecoder.class)
 public interface BackendServiceClient {
 
     @PostMapping("/v2/users")

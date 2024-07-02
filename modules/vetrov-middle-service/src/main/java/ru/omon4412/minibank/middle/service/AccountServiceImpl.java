@@ -9,7 +9,7 @@ import ru.omon4412.minibank.middle.dto.ResponseAccountDto;
 
 import java.util.Collection;
 
-@Service
+@Service("telegramAccountServiceImpl")
 @ConditionalOnProperty(value = "application.services.type", havingValue = "backend")
 @AllArgsConstructor
 public class AccountServiceImpl implements AccountService {
